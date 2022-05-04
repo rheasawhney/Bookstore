@@ -1,12 +1,12 @@
 
 .topnav {
-    background-color: rgb(255, 251, 251);
+    background-color: rgb(253, 249, 252);
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
     border-bottom: 1px;
-    border-bottom: #c5c3c3 solid;
+    border-bottom: rgb(255, 244, 252) solid;
   }
   .logo{
     width: 70px;

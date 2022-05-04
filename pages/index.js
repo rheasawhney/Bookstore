@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Banner } from '../components/Banner'
+
 import Navbar from '../components/navbar'
+
 import { logoUrl } from '../public/constants/url'
 import styles from '../styles/Home.module.css'
 <link rel="stylesheet" type="text/css" href="style.css"/>
@@ -19,6 +22,7 @@ export default function Home() {
         <link href={logoUrl} rel='icon'></link>
         </Head>
       <Navbar></Navbar>
+      <Banner></Banner>
     </main>
     
   )
