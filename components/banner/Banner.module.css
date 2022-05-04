@@ -1,0 +1,67 @@
+.banner {
+    height: 85vh;
+    width: 100%;
+    background-image: url("https://res.cloudinary.com/dxuxmr72e/image/upload/v1650905187/Bookstore/Banner/bannerimg_ax99iw.png");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  box-sizing: border-box;
+}
+.banner > p{
+    margin: 0;
+
+}
+.carousel {
+  
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5vw;
+  animation-name: slide;
+  animation-duration: 10s;
+  position: absolute;
+
+}
+.carousel > section >h1{
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 2%;
+}
+.carousel > section >hr{
+  width: 17vw;
+  margin: 2%;
+  height: 1vh;
+  background-color: black;
+
+}
+.carousel > section >p{
+  font-style: italic;
+  color: grey;
+  margin-top: 7%;
+}
+.carousel >section >button{
+  padding: 10px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+  margin-top: 6%;
+}
+.carousel > section:nth-child(2){
+  display: flex;
+  justify-content: right;
+}
+
+@keyframes slide {
+   0% {
+    left: 0;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 50%; }    
+    
+}
