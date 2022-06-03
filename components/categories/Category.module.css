@@ -1,0 +1,9 @@
+.Category{
+    width: 100vw;
+    height: 20vw;
+}
+.card{
+    width: 15vw;
+    height: 15vw;
+    background-color: rgb(255, 212, 242);
+}

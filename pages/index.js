@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Banner } from '../components/Banner'
+import { Category } from '../components/categories'
 
 import Navbar from '../components/navbar'
 
@@ -23,6 +24,8 @@ export default function Home() {
         </Head>
       <Navbar></Navbar>
       <Banner></Banner>
+      <Category></Category>
+
     </main>
     
   )

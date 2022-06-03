@@ -21,8 +21,9 @@
   grid-template-columns: 1fr 1fr;
   padding: 5vw;
   animation-name: slide;
-  animation-duration: 10s;
+  animation-duration: 5s;
   position: absolute;
+  left: 10%;
 
 }
 .carousel > section >h1{
@@ -56,12 +57,12 @@
 
 @keyframes slide {
    0% {
-    left: 0;
+    left: -30%;
   }
   50% {
-    left: 30%;
+    left: 10%;
   }
   100% {
-    left: 50%; }    
+    left: 10%; }    
     
 }
