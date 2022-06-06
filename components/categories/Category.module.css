@@ -1,9 +1,20 @@
 .Category{
-    width: 100vw;
-    height: 20vw;
+    width: 10   0vw;
+    height: auto;
+    padding: 3vw;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
 }
 .card{
     width: 15vw;
-    height: 15vw;
-    background-color: rgb(255, 212, 242);
+    height: auto;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 10px;
+
+}
+
+.image{
+    padding-left: 10vw;
 }
