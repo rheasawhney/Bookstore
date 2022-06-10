@@ -1,0 +1,31 @@
+.featuredContainer{
+    width: 100vw;
+    min-height: 40vh;
+    height: auto;
+    padding: 3vw;
+    gap: 40px;
+    text-align: center;
+    
+}
+.card{
+    width: 15vw;
+    height: 50vh;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(231, 230, 230); 
+}
+
+.image{
+    padding-left: 10vw;
+}
+
+.cardsRow{
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+

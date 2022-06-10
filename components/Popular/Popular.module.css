@@ -1,0 +1,21 @@
+.Cards{
+    width: 10   0vw;
+    height: auto;
+    padding: 3vw;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.card{
+    width: 15vw;
+    height: auto;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 10px;
+    background-color: red;
+
+}
+
+.image{
+    padding-left: 10vw;
+}
