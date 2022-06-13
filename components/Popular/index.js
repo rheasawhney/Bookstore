@@ -44,25 +44,36 @@ const popularData = [
   
     return (
       <>
-      <div className={styles.Popular}>
-         {popularData.map(cards => {
-           return(
-            <PopularCard castleImage={cards.image} title={cards.name} price={cards.price} bgColor={cards.bgColor} />
-           )
-        })}
+
+      <div className={styles.popular}>
+        <h1>Popular Collections</h1>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random.</p>
+
+
+        <section className={styles.popularContainer}>
+          {popularData.map(cards => {
+            return(
+              <PopularCard imageUrl={cards.image} title={cards.name} price={cards.price} bgColor={cards.bgColor} />
+            )
+          })}
+        </section>
+
+       
       </div>
       </>
       
     )
   }
   
-  const PopularCard=({castleImage,title,description,bgColor})=> {return(
+  const PopularCard=({imageUrl,title,price})=> {return(
     <>
-    <div className={styles.popular} style={{backgroundColor: bgColor }}>
-      <Image className={styles.image} src={castleImage} width={300} height={300}/>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
+      <div className={styles.popularCard}>
+        <Image className={styles.image} src={imageUrl} width={250} height={300}/>
+        <h5>{title}</h5>
+        <p>{price}</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
     </>
   )}
   
+

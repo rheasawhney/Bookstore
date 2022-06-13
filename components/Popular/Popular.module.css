@@ -6,16 +6,29 @@
     gap: 40px;
     justify-content: center;
 }
-.card{
-    width: 15vw;
+
+.popularCard{
+    max-width: 20vw;
+    min-height: 40vh;
     height: auto;
     padding: 10px 20px;
-    text-align: left;
+    text-align: center;
     border-radius: 10px;
-    background-color: red;
-
+    background-color: white;
+    border: 1px solid rgb(202, 202, 202); 
 }
 
 .image{
     padding-left: 10vw;
+}
+
+.popular{
+    text-align: center;
+}
+
+.popularContainer{
+    display: flex;
+    justify-content: center;
+    gap: 6vh;
+    margin: 10vh 0;
 }

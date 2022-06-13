@@ -5,7 +5,6 @@ import darkhorse from "../../public/darkhorse.jpg"
 import booktheif from "../../public/booktheif.jpg"
 import itends from "../../public/itends.jpg"
 
-
 const cardsData = [
     {
       id:1,
@@ -26,11 +25,7 @@ const cardsData = [
       name:"The Book Theif",
       price:"Rs 293",
       image:booktheif,
-      
     },
-    
-    
-    
   ]
   
   export const FeaturedContainer = () => {
@@ -43,8 +38,7 @@ const cardsData = [
          <div className={styles.cardsRow}>
          {cardsData.map(cards => {
            return(
-            <CardsCard castleImage={cards.image} title={cards.name} price={cards.price}/>
-        
+            <CardsCard imageUrl={cards.image} title={cards.name} price={cards.price}/>
            )
         })}
         </div>
@@ -54,14 +48,14 @@ const cardsData = [
     )
   }
   
-  const CardsCard=({castleImage,title,price,bgColor})=> {return(
+  const CardsCard=({imageUrl,title,price,bgColor})=> {return(
     <>
-    <div className={styles.card} style={{backgroundColor: bgColor }}>
-      <Image className={styles.image} src={castleImage} width={300} height={300}/>
-      <h5>{title}</h5>
-      <p>{price}</p>
-      <p>⭐⭐⭐⭐⭐</p>
-    </div>
+      <div className={styles.card} style={{backgroundColor: bgColor }}>
+        <Image className={styles.image} src={imageUrl} width={300} height={300}/>
+        <h5>{title}</h5>
+        <p>{price}</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
     </>
   )}
   
