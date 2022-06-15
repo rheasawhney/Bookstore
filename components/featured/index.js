@@ -4,6 +4,7 @@ import Image from "next/image"
 import darkhorse from "../../public/darkhorse.jpg"
 import booktheif from "../../public/booktheif.jpg"
 import itends from "../../public/itends.jpg"
+import { ProductCard } from '../common/productCard'
 
 const cardsData = [
     {
@@ -38,7 +39,7 @@ const cardsData = [
          <div className={styles.cardsRow}>
          {cardsData.map(cards => {
            return(
-            <CardsCard imageUrl={cards.image} title={cards.name} price={cards.price}/>
+            <ProductCard key={cards.id} name={cards.name} price={cards.price} imageUrl={cards.image}/>
            )
         })}
         </div>
@@ -47,15 +48,4 @@ const cardsData = [
       
     )
   }
-  
-  const CardsCard=({imageUrl,title,price,bgColor})=> {return(
-    <>
-      <div className={styles.card} style={{backgroundColor: bgColor }}>
-        <Image className={styles.image} src={imageUrl} width={300} height={300}/>
-        <h5>{title}</h5>
-        <p>{price}</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-    </>
-  )}
   

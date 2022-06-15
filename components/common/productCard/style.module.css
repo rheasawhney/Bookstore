@@ -1,0 +1,57 @@
+.featuredContainer{
+    width: 100vw;
+    min-height: 40vh;
+    height: auto;
+    padding: 3vw;
+    gap: 40px;
+    text-align: center;
+    
+}
+.card{
+    max-width: 20vw;
+    min-height: 40vh;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(202, 202, 202); 
+    position: relative;
+
+}
+
+.image{
+    width: 10vw;
+    padding-left: 10vw;
+}
+
+.cardsRow{
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.icon{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 40%;
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.icon>a>i{
+   font-size: 1.4rem;
+   margin-right: 30px;
+}
+
+.card:hover .icon{
+    display: block;
+}

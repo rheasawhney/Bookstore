@@ -5,6 +5,7 @@ import thealchemist from "../../public/thealchemist.jpg"
 import midlib from "../../public/midlib.png"
 import thefourwinds from "../../public/thefourwinds.jpg"
 import fault from "../../public/fault.jpg"
+import { ProductCard } from '../common/productCard'
 
 
 const popularData = [
@@ -41,39 +42,20 @@ const popularData = [
   ]
   
   export const Popular = () => {
-  
-    return (
-      <>
 
+    return (
       <div className={styles.popular}>
         <h1>Popular Collections</h1>
         <p>Contrary to popular belief, Lorem Ipsum is not simply random.</p>
-
-
         <section className={styles.popularContainer}>
           {popularData.map(cards => {
             return(
-              <PopularCard imageUrl={cards.image} title={cards.name} price={cards.price} bgColor={cards.bgColor} />
+              <ProductCard imageUrl={cards.image} title={cards.name} price={cards.price} />
             )
           })}
         </section>
-
-       
       </div>
-      </>
-      
     )
   }
-  
-  const PopularCard=({imageUrl,title,price})=> {return(
-    <>
-      <div className={styles.popularCard}>
-        <Image className={styles.image} src={imageUrl} width={250} height={300}/>
-        <h5>{title}</h5>
-        <p>{price}</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-    </>
-  )}
   
 
