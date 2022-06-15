@@ -1,0 +1,6 @@
+.optionContainer{
+    display: flex;
+    justify-content: center;
+    gap: 7vh;
+}
+

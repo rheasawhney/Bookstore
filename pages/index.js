@@ -8,6 +8,7 @@ import { logoUrl } from '../public/constants/url'
 import styles from '../styles/Home.module.css'
 import { Popular } from '../components/Popular'
 import { FeaturedContainer } from '../components/Featured'
+import { Option } from '../components/option'
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
       <Category></Category>
       <FeaturedContainer></FeaturedContainer>
       <Popular></Popular>
+      <Option></Option>
+      
+    
 
     </main>
     
