@@ -1,6 +1,9 @@
 .optionContainer{
     display: flex;
     justify-content: center;
-    gap: 7vh;
+    gap: 4vh;
 }
 
+.option{
+    margin: 10vh 0px;
+}

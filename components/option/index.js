@@ -31,13 +31,10 @@ const optionData = [
    
       ]
 
-
-
-
 export const Option = () => {
 
     return (
-      <div className={styles.Option}>
+      <div className={styles.option}>
         <section className={styles.optionContainer}>
           {optionData.map(cards => {
             return(
