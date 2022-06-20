@@ -9,6 +9,7 @@ import styles from '../styles/Home.module.css'
 import { Popular } from '../components/Popular'
 import { FeaturedContainer } from '../components/Featured'
 import { Option } from '../components/option'
+import { Blogs } from '../components/blogs'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <FeaturedContainer></FeaturedContainer>
       <Popular></Popular>
       <Option></Option>
+      <Blogs></Blogs>
       
     
 
