@@ -6,7 +6,7 @@ export const ProductCard = ({imageUrl,title,price}) => {
   return (
     <div className={styles.card}>
         <section>
-            <Image className={styles.image} src={imageUrl} width={300} height={300}/>
+            <Image className={styles.image} src={imageUrl} width={300} height={300} alt="prodcard"/>
             <h5>{title}</h5>
             <p>{price}</p>
             <p>⭐⭐⭐⭐⭐</p>

@@ -54,9 +54,9 @@ export const Category = () => {
   return (
     <>
     <div className={styles.Category}>
-       {catergoryData.map(category => {
+       {catergoryData.map((category,index) => {
          return(
-          <CategoryCard castleImage={category.image} title={category.name} description={category.description} bgColor={category.bgColor} />
+          <CategoryCard key={index} castleImage={category.image} title={category.name} description={category.description} bgColor={category.bgColor} />
          )
       })}
     </div>
@@ -68,7 +68,7 @@ export const Category = () => {
 const CategoryCard=({castleImage,title,description,bgColor})=> {return(
   <>
   <div className={styles.card} style={{backgroundColor: bgColor }}>
-    <Image className={styles.image} src={castleImage} width={300} height={300}/>
+    <Image className={styles.image} src={castleImage} width={300} height={300} alt="card"/>
     <h3>{title}</h3>
     <p>{description}</p>
   </div>

@@ -1,26 +1,27 @@
 import styles from "../navbar/Navbar.module.css"
 import {brandUrl} from "../../public/constants/url"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCar, faSearch } from "@fortawesome/free-solid-svg-icons"
+import Image from "next/image"
+import Link from "next/link"
 
 const Navbar= ()=>{
     return (
         <div className={styles.container}>
         <div className={styles.topnav}>
-         <img src={brandUrl} className={styles.logo}></img>
-        <ul>
-            <a class="active" href="#home">Home</a>
-            <a href="#blog">Books</a>
-            <a href="#Contact Us">Category </a>
-            <a href="Log in">Contact</a>
-            <a href="Sign up">Sign up</a>
-        </ul>
-        <ul className="navicons">      
-                <a href="/"><i className="fa fa-search"></i></a>
-                <a href="/"><i className="fa fa-shopping-cart"></i></a>
-                <a href="/"> <i className="fa fa-user"></i></a> 
-        </ul>
-      </div> </div>
+         <Image src={brandUrl} className={styles.logo} width="100" height={"100"} alt="logo" />
+            <ul>
+                <a className="active" href="#home">Home</a>
+                <a href="#blog">Books</a>
+                <a href="#Contact Us">Category </a>
+                <a href="Log in">Contact</a>
+                <a href="Sign up">Sign up</a>
+            </ul>
+            {/* <ul className="navicons">      
+                    <Link href="/" passHref><i className="fa fa-search"></i></Link>
+                    <Link href="/" passHref><i className="fa fa-shopping-cart"></i></Link>
+                    <Link href="/" passHref> <i className="fa fa-user"></i></Link> 
+            </ul> */}
+        </div> 
+      </div>
     )
 
 }

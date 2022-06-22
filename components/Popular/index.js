@@ -48,9 +48,9 @@ const popularData = [
         <h1>Popular Collections</h1>
         <p>Contrary to popular belief, Lorem Ipsum is not simply random.</p>
         <section className={styles.popularContainer}>
-          {popularData.map(cards => {
+          {popularData.map((cards,index) => {
             return(
-              <ProductCard imageUrl={cards.image} title={cards.name} price={cards.price} />
+              <ProductCard key={index} imageUrl={cards.image} title={cards.name} price={cards.price} />
             )
           })}
         </section>

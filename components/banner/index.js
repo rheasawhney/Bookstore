@@ -15,7 +15,7 @@ export const Banner= ()=>{
                 <button>Explore More</button>
             </section>
             <section>
-                <Image src={book1Url} width="300" height="400"></Image>
+                <Image src={book1Url} width="300" height="400" alt="book"></Image>
             </section>
         </div>
         </div>

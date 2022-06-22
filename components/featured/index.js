@@ -37,9 +37,9 @@ const cardsData = [
         <h2>Featured Collections</h2>
         <p>Contrary to popular belief, Lorem Ipsum is not simply random</p>
          <div className={styles.cardsRow}>
-         {cardsData.map(cards => {
+         {cardsData.map((cards,index) => {
            return(
-            <ProductCard key={cards.id} name={cards.name} price={cards.price} imageUrl={cards.image}/>
+            <ProductCard key={index} name={cards.name} price={cards.price} imageUrl={cards.image}/>
            )
         })}
         </div>

@@ -36,9 +36,9 @@ export const Option = () => {
     return (
       <div className={styles.option}>
         <section className={styles.optionContainer}>
-          {optionData.map(cards => {
+          {optionData.map((cards,index) => {
             return(
-              <OptionCard title={cards.name} description={cards.description} />
+              <OptionCard key={index} title={cards.name} description={cards.description} />
             )
           })}
         </section>

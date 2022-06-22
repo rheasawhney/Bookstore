@@ -31,9 +31,9 @@ export const Blogs = () => {
       <section className={styles.BlogContainer}>
         
       {
-        blogData.map((cards)=>{
+        blogData.map((cards,index)=>{
           return(
-            <BlogCard image={cards.image} title={cards.name} description={cards.description}/>
+            <BlogCard key={index} image={cards.image} title={cards.name} description={cards.description}/>
           )
         })
       }

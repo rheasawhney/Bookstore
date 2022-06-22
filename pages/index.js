@@ -10,28 +10,13 @@ import { Popular } from '../components/Popular'
 import { FeaturedContainer } from '../components/Featured'
 import { Option } from '../components/option'
 import { Blogs } from '../components/blogs'
+import { HeadComponent } from '../components/common/head'
 
 export default function Home() {
   return (
     <main>
-      <Head>
-        <title>
-          Bookstore | Home
-        </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link href={logoUrl} rel='icon'></link>
-        </Head>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Category></Category>
-      <FeaturedContainer></FeaturedContainer>
-      <Popular></Popular>
-      <Option></Option>
-      <Blogs></Blogs>
-      
-    
-
+      <HeadComponent title="Bookstore | Home" icon={""} />
+      <Navbar/>
     </main>
-    
   )
 }
