@@ -18,6 +18,8 @@ export default function Home() {
       <HeadComponent title="Bookstore | Home" icon={logoUrl} />
       <Navbar/>
       <Banner/>
+      <Category/>
+      <FeaturedContainer/>
     </main>
   )
 }

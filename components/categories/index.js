@@ -15,35 +15,35 @@ const catergoryData = [
     name:"Fiction",
     description:"fiction is based on made up scenarios",
     image:fiction,
-    bgColor:"#ffe9c2  "
+    bgColor:"#f0e6ff  "
   },
   {
     id:2,
     name:"Non-Fiction",
     description:"Non fiction is based on not made up scenarios",
     image: nonFiction,
-    bgColor:"#ffcac2"
+    bgColor:"#f0e6ff "
   },
   {
     id:3,
     name:"Fantasy",
     description:"Fantasy deals with the imagination and fantasy",
     image:fantasy,
-    bgColor:"#c7fff8"
+    bgColor:"#f0e6ff "
   },
   {
     id:4,
     name:"Mystery",
     description:"Mystery deals with the mysterios stories",
     image:mystery,
-    bgColor:"#d2ffc2"
+    bgColor:"#f0e6ff "
   },
   {
     id:5,
     name:"Biography",
     description:"Biography deals with the biography of an individual",
     image:bio,
-    bgColor:"#f9e6ff"
+    bgColor:"#f0e6ff "
   }
   
   
@@ -53,7 +53,7 @@ export const Category = () => {
 
   return (
     <>
-    <div className={styles.Category}>
+    <div className="w-[90%] sm:w-[80%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-5 xl:grid-cols-5 m-auto my-10">
        {catergoryData.map((category,index) => {
          return(
           <CategoryCard key={index} castleImage={category.image} title={category.name} description={category.description} bgColor={category.bgColor} />
@@ -67,10 +67,10 @@ export const Category = () => {
 
 const CategoryCard=({castleImage,title,description,bgColor})=> {return(
   <>
-  <div className={styles.card} style={{backgroundColor: bgColor }}>
+  <div className='w-auto p-4 rounded-lg' style={{backgroundColor: bgColor }}>
     <Image className={styles.image} src={castleImage} width={300} height={300} alt="card"/>
     <h3>{title}</h3>
-    <p>{description}</p>
+    <p className='text-sm font-light text-gray-600'>{description}</p>
   </div>
   </>
 )}

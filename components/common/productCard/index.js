@@ -2,13 +2,13 @@ import Image from 'next/image'
 import React from 'react'
 import styles from "../productCard/style.module.css"
 
-export const ProductCard = ({imageUrl,title,price}) => {
+export const ProductCard = ({imageUrl,name,price}) => {
   return (
-    <div className={styles.card}>
+    <div className="w-[15vw] p-4 pb-12 my-10 border shadow-lg">
         <section>
-            <Image className={styles.image} src={imageUrl} width={300} height={300} alt="prodcard"/>
-            <h5>{title}</h5>
-            <p>{price}</p>
+            <Image src={imageUrl} width={250} height={240} alt="prodcard"/>
+            <h5 className='text-md font-bold my-1'>{name}</h5>
+            <p className='text-gray-400 my-1'>{price}</p>
             <p>⭐⭐⭐⭐⭐</p>
         </section>
         <section className={styles.icon}>
@@ -18,3 +18,4 @@ export const ProductCard = ({imageUrl,title,price}) => {
     </div>
   )
 }
+
