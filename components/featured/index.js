@@ -1,55 +1,9 @@
 import React from 'react'
-import styles from "../featured/Featured.module.css"
-import Image from "next/image"
-import darkhorse from "../../public/darkhorse.jpg"
-import booktheif from "../../public/booktheif.jpg"
-import itends from "../../public/itends.jpg"
 import { ProductCard } from '../common/productCard'
-import { ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/outline'
+import { ChevronRightIcon } from '@heroicons/react/outline'
+import { cardsData } from '../../utils/books'
 
-const cardsData = [
-    {
-      id:1,
-      name:"Dark Horse",
-      price:"Rs. 495",
-      image:darkhorse,
-      
-    },
-    {
-      id:2,
-      name:"It Ends with Us",
-      price:"Rs 265",
-      image: itends,
-      
-    },
-    {
-      id:3,
-      name:"The Book Theif",
-      price:"Rs 293",
-      image:booktheif,
-    },
-    {
-      id:3,
-      name:"The Book Theif",
-      price:"Rs 293",
-      image:booktheif,
-    },
-    {
-      id:3,
-      name:"The Book Theif",
-      price:"Rs 293",
-      image:booktheif,
-    },
-    {
-      id:3,
-      name:"The Book Theif",
-      price:"Rs 293",
-      image:booktheif,
-    },
-  ]
-  
-  export const FeaturedContainer = () => {
-  
+export const FeaturedContainer = () => {  
     return (
       <div className="w-full h-auto my-20">
         <section className='w-[80%] m-auto min-h-[60vh]'>

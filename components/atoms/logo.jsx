@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { logoUrl } from '../../public/constants/url'
+import { brandUrl, logoUrl } from '../../public/constants/url'
 import Link from 'next/link'
 
 export const Logo = () => {
@@ -10,3 +10,12 @@ export const Logo = () => {
     </Link>
   )
 }
+
+export const LogoGray = () => {
+  return (
+    <Link href='/'>
+        <a href='#'><Image src={brandUrl} width="100" height="70" /></a>
+    </Link>
+  )
+}
+

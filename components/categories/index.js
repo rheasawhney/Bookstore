@@ -7,6 +7,7 @@ import fiction from "../../public/download.jpeg"
 import mystery from "../../public/mystery.jpeg"
 import nonFiction from "../../public/nonFiction.jpeg"
 import fantasy from "../../public/fantasy.jpeg"
+import { ChevronRightIcon } from '@heroicons/react/outline'
 
 
 const catergoryData = [
@@ -53,6 +54,9 @@ export const Category = () => {
 
   return (
     <>
+     <span className='flex items-center justify-between ml-[10%] mt-20'>
+            <h2 className='text-2xl font-bold' >Featured Categories</h2>
+    </span>
     <div className="w-[90%] sm:w-[80%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-5 xl:grid-cols-5 m-auto my-10">
        {catergoryData.map((category,index) => {
          return(

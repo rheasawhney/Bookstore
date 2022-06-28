@@ -1,16 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Category } from '../components/categories'
 import { logoUrl } from '../public/constants/url'
-import styles from '../styles/Home.module.css'
-import { Popular } from '../components/Popular'
 import { FeaturedContainer } from '../components/Featured'
-import { Option } from '../components/option'
-import { Blogs } from '../components/blogs'
 import { HeadComponent } from '../components/common/head'
 import Navbar from '../components/home/navbar'
 import Banner from '../components/home/banner'
+import Footer from '../components/common/footer'
 
 export default function Home() {
   return (
@@ -20,6 +14,7 @@ export default function Home() {
       <Banner/>
       <Category/>
       <FeaturedContainer/>
+      <Footer />
     </main>
   )
 }
