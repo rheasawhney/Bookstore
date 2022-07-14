@@ -36,7 +36,6 @@ const categoryData = [
     },
 ]
 export const Teamimage = () => {
-
         return (
           <>
            <span className='flex items-center justify-center ml-[10%] mt-20'>
@@ -52,34 +51,15 @@ export const Teamimage = () => {
           </>
           
         )
-      }
-       const CategoryCard=({castleImage,title,description,bgColor})=> {return(
+}
+      
+const CategoryCard=({castleImage,title,description,bgColor})=> {return(
         <>
-        <div className='w-auto p-4 rounded-lg content-center' style={{backgroundColor: bgColor }}>
+        <div className='w-auto pb-2 rounded-lg content-center bg-gray-100 text-center' >
           <img className src={castleImage} alt="card"/>
-          <h3>{title}</h3>
-          <p className='text-sm font-light text-gray-600'>{description}</p>
+          <h3 className='mt-2'>{title}</h3>
+          <p className='text-sm font-light text-gray-600 mt-3'>{description}</p>
         </div>
         </>
-      )}
+)}
       
-    
-    
-  
-
-export const Team = () => {
-  return (
-    <div className='w-100 h-[58vh] bg-red-100 text-center'>
-         <br/><br/>
-        <h2 className='text-3xl font-bold'>
-        Awesome Team
-      </h2>
-      <br/>
-      <p className='px-[16vw]'>
-      Contrary to popular belief, Lorem Ipsum is not simply random.
-      </p>
-      
-    </div>
-    
-  )
-}

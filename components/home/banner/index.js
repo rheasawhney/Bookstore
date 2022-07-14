@@ -121,7 +121,7 @@ export default function Example() {
               <span className="block text-indigo-600 xl:inline">BOOK COLLECTION</span>
             </h1>
             <p className="mt-3 max-w-lg mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-                Find the best book categories, with a wide range of authors and themes, and we'll quickly and affordably deliver it to your home.
+                Find the best book categories, with a wide range of authors and themes, and well quickly and affordably deliver it to your home.
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md">

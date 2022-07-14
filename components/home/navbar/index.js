@@ -47,7 +47,7 @@ export default function Navbar() {
                         <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                             {navList.map(nav=> {
                                 return(
-                                <a href={nav.route} className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                                <a key={nav.route} href={nav.route} className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
                                     {nav.title}
                                 </a>
                                 )
@@ -139,6 +139,7 @@ export default function Navbar() {
                 {navList.map(nav=> {
                             return(
                                 <Disclosure.Button
+                                key={nav.route}
                                 as="a"
                                 href={nav.route}
                                 className=" text-gray-400 block pl-3 pr-4 py-2 text-base font-medium"
