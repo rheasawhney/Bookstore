@@ -9,7 +9,7 @@ export const Feedback = () => {
         What Clients Says
       </h2><br/><br/>
       <p className='px-[16vw]'>
-      It's so convenient to shop online for books and have them delivered right to my door! The customer service is excellent, too - I had a question about a book I was interested in and they got back to me right away. Highly recommend this online bookstore!
+      Its so convenient to shop online for books and have them delivered right to my door! The customer service is excellent, too - I had a question about a book I was interested in and they got back to me right away. Highly recommend this online bookstore!
       </p>
       <br/><br/>
       <img className='mx-auto h-27 w-32 rounded-full lg:w-32 lg:h-27' src='images/client.webp'/>
