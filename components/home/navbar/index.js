@@ -15,20 +15,25 @@ const navList = [
         route:"/"
     },
     {
-        id:1,
+        id:2,
         title:"About",
         route:"/about"
     },
     {
-        id:1,
+        id:3,
         title:"Categories",
         route:"/categories"
     },
     {
-        id:1,
+        id:4,
         title:"Services",
         route:"/services"
-    }
+    },
+    {
+        id:5,
+        title:"Contact",
+        route:"/contact"
+    },
 
 ]
 
