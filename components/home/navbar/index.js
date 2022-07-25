@@ -60,8 +60,10 @@ export default function Navbar() {
                         </div>
                     </div>
                     <div className="flex items-center lg:hidden">
-                        {/* Mobile menu button */}
-                        <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        {/* menu button */}
+                        <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400
+                         hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset 
+                         focus:ring-indigo-500">
                         <span className="sr-only">Open main menu</span>
                         {open ? (
                             <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -73,7 +75,8 @@ export default function Navbar() {
                     <div className="hidden lg:ml-4 lg:flex lg:items-center">
                         <button
                         type="button"
-                        className="flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none
+                         focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                         <span className="sr-only">View notifications</span>
                         <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
@@ -82,7 +85,8 @@ export default function Navbar() {
                         {/* Profile dropdown */}
                         <Menu as="div" className="ml-4 relative flex-shrink-0">
                         <div>
-                            <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none 
+                            focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span className="sr-only">Open user menu</span>
                             <img
                                 className="h-8 w-8 rounded-full"

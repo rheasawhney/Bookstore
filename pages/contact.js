@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/home/navbar'
 import { BreadCrum } from '../components/common/breadcrum'
 import Footer from '../components/common/footer'
+import { ContactInfo } from '../components/contact/info'
 
 export const contact = () => {
   return (
@@ -14,8 +15,8 @@ const Contact = () => {
       <div>
       <Navbar/>
       <div>
-        <BreadCrum></BreadCrum>
-        
+        <BreadCrum pageName={"Contact Us"}></BreadCrum>
+        <ContactInfo></ContactInfo>
         
       </div>
     

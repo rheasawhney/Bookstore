@@ -1,10 +1,12 @@
 import React from 'react'
 import { BreadCrum } from '../components/common/breadcrum'
+import { Info } from './info'
 
-export const Contact = () => {
+export const Contactcomp = () => {
   return (
     <div>
-      <BreadCrum></BreadCrum>  
+      <BreadCrum></BreadCrum> 
+      
     </div>
   )
 }
