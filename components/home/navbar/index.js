@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
 import { Logo } from '../../atoms/logo'
+import Link from 'next/link'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -38,6 +39,10 @@ const navList = [
 ]
 
 export default function Navbar() {
+
+
+  const isLoggedIn = false;
+
   return (
     <div className='pt-4'>
         <Disclosure as="nav" className="bg-white shadow">
@@ -83,6 +88,7 @@ export default function Navbar() {
                         </button>
 
                         {/* Profile dropdown */}
+                        {isLoggedIn ?
                         <Menu as="div" className="ml-4 relative flex-shrink-0">
                         <div>
                             <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none 
@@ -138,6 +144,8 @@ export default function Navbar() {
                             </Menu.Items>
                         </Transition>
                         </Menu>
+                        :<Link href="/login"><button className='bg-violet-700 rounded-lg text-white px-2 ml-4 py-1'>Login</button></Link> 
+                        }
                     </div>
                 </div>
             </div>

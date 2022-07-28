@@ -9,7 +9,7 @@ import UserLayout from '../components/common/layout'
   return (
 
     <UserLayout>
-      <BreadCrum />
+      <BreadCrum pageName={"About"} />
       <Info />
       <Feedback />
       <Teamimage />

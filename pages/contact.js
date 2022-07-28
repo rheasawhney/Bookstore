@@ -4,11 +4,6 @@ import { BreadCrum } from '../components/common/breadcrum'
 import Footer from '../components/common/footer'
 import { ContactInfo } from '../components/contact/info'
 
-export const contact = () => {
-  return (
-    <div>contact</div>
-  )
-}
 
 const Contact = () => {
     return (
@@ -24,5 +19,6 @@ const Contact = () => {
       <Footer/>
       </div>
     )
-  }
-  export default Contact
+}
+ 
+export default Contact

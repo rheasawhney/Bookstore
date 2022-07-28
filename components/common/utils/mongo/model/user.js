@@ -3,10 +3,14 @@ const Schema = mongoose.Schema;
 
 const user = new Schema({
   id: { type: String },
-  phoneNumber: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
+  contact: { type: String},
+  email: { type: String, unique: true },
   password: { type: String, required: true },
-  profileId: { type: String },
+  photoUrl: { type: String },
+  cart: [{type: String}],
+  order: [{type: String}],
+  cancelled:[{type: String}],
+  fulfilled:[{type: String}],
 });
 
 mongoose.models = {};
@@ -14,3 +18,10 @@ mongoose.models = {};
 const UserDb = mongoose.model('User', user);
 
 export default UserDb;
+
+`16hours`
+// Categories
+// Book details 
+// Cart and checkout
+// All other things
+// Mobile view and desktop view and create ppt, documentation
