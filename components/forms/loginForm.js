@@ -1,24 +1,31 @@
 import axios from 'axios';
+import { Router, useRouter } from 'next/router';
 import React, { useState } from 'react'
+import { useCookies } from 'react-cookie';
+
 import toast from 'react-hot-toast';
 
 export const LoginForm = () => {
 
   const insertUser = "http://localhost:3000/api/user/insertUser";
+  const [cookies, setCookie] = useCookies(['isLoggedIn']);
 
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const router = useRouter();
 
   const submit = () => {
     if(email === '' && password === ''){
       toast.error("Please enter email and password");
     }else{
-        registerUser()
+        checkUserExist(email,password);
+     
     }
   }
 
   const registerUser = async () => {
       const res = await axios.post(insertUser,{email:email,password:password})
+      console.log(res)
       if(res.data){
         toast.success("User Created Successfully");
       }
@@ -32,6 +39,22 @@ export const LoginForm = () => {
       setPassword(value);
     }
   }
+
+  const checkUserExist = async (email,password) => {
+    const res = await axios.post("http://localhost:3000/api/user/getUserByPhone",{email:email})
+    if(res.data && res.data._id){
+      if(password === res.data.password){
+        toast.success("Login Successfully");
+        setCookie('isLoggedIn',true);
+        router.push("/profile")
+      }else{
+        toast.error("Password is incorrect, please try again");
+      }
+    }else{
+      registerUser()
+    }
+  }
+
 
   return (
     <div className='form w-full h-[60vh] flex justify-center align-middle'>

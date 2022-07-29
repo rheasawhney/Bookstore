@@ -18,10 +18,3 @@ mongoose.models = {};
 const UserDb = mongoose.model('User', user);
 
 export default UserDb;
-
-`16hours`
-// Categories
-// Book details 
-// Cart and checkout
-// All other things
-// Mobile view and desktop view and create ppt, documentation

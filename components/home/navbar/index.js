@@ -1,9 +1,12 @@
 
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
 import { Logo } from '../../atoms/logo'
 import Link from 'next/link'
+import { useCookies } from 'react-cookie'
+import { faCropSimple } from '@fortawesome/free-solid-svg-icons'
+import { Router, useRouter } from 'next/router'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -40,8 +43,19 @@ const navList = [
 
 export default function Navbar() {
 
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [cookies, setCookie] = useCookies(['isLoggedIn']);
 
-  const isLoggedIn = false;
+  const router = useRouter();
+
+  useEffect(() => {
+    if(cookies.isLoggedIn==='true'){
+        setLoggedIn(true)
+    }else{
+        setLoggedIn(false)
+    }
+    console.log(isLoggedIn)
+  },[cookies])
 
   return (
     <div className='pt-4'>
@@ -113,12 +127,15 @@ export default function Navbar() {
                             <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                                 {({ active }) => (
+                                <Link href="/profile">
                                 <a
                                     href="#"
                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                    
                                 >
                                     Your Profile
                                 </a>
+                                </Link>
                                 )}
                             </Menu.Item>
                             <Menu.Item>
@@ -134,6 +151,10 @@ export default function Navbar() {
                             <Menu.Item>
                                 {({ active }) => (
                                 <a
+                                    onClick={()=>{
+                                        setCookie('isLoggedIn',false)
+                                        router.push("/login")
+                                    }}
                                     href="#"
                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                 >
