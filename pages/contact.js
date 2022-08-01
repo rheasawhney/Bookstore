@@ -12,10 +12,7 @@ const Contact = () => {
       <div>
         <BreadCrum pageName={"Contact Us"}></BreadCrum>
         <ContactInfo></ContactInfo>
-        
       </div>
-    
-  
       <Footer/>
       </div>
     )
