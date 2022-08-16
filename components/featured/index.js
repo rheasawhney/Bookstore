@@ -3,7 +3,7 @@ import { ProductCard } from '../common/productCard'
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import { cardsData } from '../../utils/books'
 
-export const FeaturedContainer = () => {  
+export const FeaturedContainer = ({books}) => {  
     return (
       <div className="w-full h-auto my-20">
         <section className='w-[80%] m-auto min-h-[60vh]'>
@@ -14,9 +14,9 @@ export const FeaturedContainer = () => {
             </a>
           </span>
           <div className={"w-[100%] sm:w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-2 xl:grid-cols-5 m-auto my-10"}>
-            {cardsData.map((cards,index) => {
+            {books.slice(0,10).map((cards,index) => {
               return(
-                <ProductCard key={index} name={cards.name} price={cards.price} imageUrl={cards.image}/>
+                <ProductCard key={index} name={cards.title} price={cards?.price ? cards.price :"$10"} imageUrl={cards.thumbnailUrl}/>
               )
             })}
           </div>

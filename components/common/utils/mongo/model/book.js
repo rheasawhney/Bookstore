@@ -22,7 +22,7 @@ const Book = new Schema({
 
 mongoose.models = {};
 
-const BookDb = mongoose.model('book', Book);
+const BookDb = mongoose.model('books', Book);
 
 export default BookDb;
 

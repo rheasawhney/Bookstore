@@ -1,6 +1,6 @@
 import { authors } from "../../../utils/author";
 
-export default function Authors() {
+export default function Authors({books}) {
     return (
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
@@ -12,14 +12,14 @@ export default function Authors() {
               role="list"
               className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-5"
             >
-              {authors.map((person) => (
-                <li key={person.author}>
+              {books.slice(0,5).map((person) => (
+                <li key={person.id}>
                   <div className="space-y-4">
-                    <img className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24" src={person.imageLink} alt="" />
+                    <img className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24" src={person.thumbnailUrl} alt="" />
                     <div className="space-y-2">
                       <div className="text-xs font-medium lg:text-sm">
-                        <h3>{person.author}</h3>
-                        <p className="text-indigo-600">{person.language}</p>
+                        <h3>{person.authors[0]}</h3>
+                        <p className="text-indigo-600">{"English"}</p>
                       </div>
                     </div>
                   </div>

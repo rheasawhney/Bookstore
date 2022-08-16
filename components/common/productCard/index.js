@@ -4,7 +4,7 @@ import styles from "../productCard/style.module.css"
 
 export const ProductCard = ({imageUrl,name,price}) => {
   return (
-    <div className="w-[15vw] p-4 pb-12 my-10 border shadow-lg">
+    <div className="w-[15vw] p-4 pb-12 my-10 border shadow-2xl rounded-xl">
         <section>
             <Image src={imageUrl} width={250} height={240} alt="prodcard"/>
             <h5 className='text-md font-bold my-1'>{name}</h5>
