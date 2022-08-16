@@ -58,7 +58,7 @@ export default function Navbar() {
   },[cookies])
 
   return (
-    <div className='pt-4'>
+    <div className='pt-4 border-b-2 bottom-2'>
         <Disclosure as="nav" className="bg-white shadow">
         {({ open }) => (
             <>
@@ -239,3 +239,6 @@ export default function Navbar() {
     </div>
   )
 }
+
+
+

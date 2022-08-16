@@ -46,6 +46,7 @@ export const LoginForm = () => {
       if(password === res.data.password){
         toast.success("Login Successfully");
         setCookie('isLoggedIn',true);
+        setCookie('userEmail',email);
         router.push("/profile")
       }else{
         toast.error("Password is incorrect, please try again");
