@@ -30,8 +30,8 @@ const navList = [
     },
     {
         id:4,
-        title:"Services",
-        route:"/services"
+        title:"Orders",
+        route:"/orders"
     },
     {
         id:5,
