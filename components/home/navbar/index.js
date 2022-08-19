@@ -46,6 +46,7 @@ export default function Navbar() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
 
+
   const router = useRouter();
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function Navbar() {
                     </div>
                     <div className="flex px-2 lg:px-0">
                         <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+                            {isLoggedIn ? <>
                             {navList.map(nav=> {
                                 return(
                                 <a key={nav.route} href={nav.route} className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
@@ -76,6 +78,17 @@ export default function Navbar() {
                                 </a>
                                 )
                             })}
+                            </>
+                            :
+                            <>
+                             {navList.filter((nav)=> nav.id != 4).map(nav=> {
+                                return(
+                                <a key={nav.route} href={nav.route} className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                                    {nav.title}
+                                </a>
+                                )
+                            })}</>
+                            }
                         </div>
                     </div>
                     <div className="flex items-center lg:hidden">
@@ -173,7 +186,7 @@ export default function Navbar() {
 
             <Disclosure.Panel className="lg:hidden">
                 <div className="pt-2 pb-3 space-y-1">
-        
+                        
                 {navList.map(nav=> {
                             return(
                                 <Disclosure.Button
