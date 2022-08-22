@@ -111,7 +111,10 @@ export default function Navbar() {
                          focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                         <span className="sr-only">View notifications</span>
-                        <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                        <Link href={"/cart"}>
+                            <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                        </Link>
+                     
                         </button>
 
                         {/* Profile dropdown */}
@@ -218,7 +221,10 @@ export default function Navbar() {
                     className="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                     <span className="sr-only">View notifications</span>
+                    <Link href="/cart" passHref>
                     <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                    </Link>
+               
                     </button>
                 </div>
                 <div className="mt-3 space-y-1">
