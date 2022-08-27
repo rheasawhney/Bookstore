@@ -1,4 +1,6 @@
 import axios from 'axios'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
@@ -11,6 +13,7 @@ export const Orders = () => {
 
   const [cookies, setCookie] = useCookies(['order']);
   const [cart,setCart] = useState()
+  const router = useRouter()
 
   useEffect(()=>{
     fetchBooks()
@@ -20,21 +23,29 @@ export const Orders = () => {
     const data = await axios.get("/api/book/getBooks")
   
     if(data?.data?.length>0){
-      let list = data?.data.filter(x => cookies?.order?.books.includes(x._id))
+      let list = data?.data.filter(x => cookies?.order?.books?.includes(x._id))
+      console.log(list)
       setCart(list)
     }  
   }
 
-
   function handleRemove(id){
-    let x = cart?.filter(x=> x._id !== id)
+    let book = cart?.filter(x=> x._id !== id)
     let cartData = {
       "userId":cookies?.userEmail,
-      "books": x
+      "books": book
     }
-      setCookie('order',cartData);
-      toast.success("Book removed to cart succesfully")
-}
+    setCookie('order',cartData);
+    setCart(cartData.books)
+    toast.success("Book removed to cart succesfully")
+  }
+
+  function handleOrder(){
+    toast.success("Your order is placed succesfully")
+    setCookie("cart",{})
+    setCookie("order",{})
+    router.push("/orderCompletion")
+  }
 
   return (
     <div>
@@ -44,10 +55,24 @@ export const Orders = () => {
           <section className='w-[60%] m-auto my-[5vh]'>
             <h3 className='font-bold'>My Orders</h3>
 
-            <section className='my-10 border-2 border-gray-100 h-auto py-10 bg-gray-100'>
-                {cart && cart.map((x,index) => {
+            <section className='my-10 border-2 border-gray-100 h-auto py-10 bg-gray-100 flex'>
+              <section className='w-[70%]'>
+                {cart && cart?.map((x,index) => {
                   return <OrderCart  handleRemove={handleRemove} id={x._id} key={index} name={x.title} price={"$10"} imageUrl={x.thumbnailUrl} description={x.description}  />
                 })}
+              </section>
+
+              {cart?.length>0 && <section>
+                <p className='text-lg border-b-4'>Order Details</p>
+                <p className='text-blue-400 text-lg my-2'>Price: ${cart?.length * 10}</p>
+                <p className='text-blue-400 text-lg my-2'>Delivery Fee: ${cart?.length * 2}</p>
+                <p className='text-blue-400 text-lg my-2'>Taxes: ${cart?.length * 0.5}</p>
+                <hr/>
+                <p className='border-t-4 border-orange-700 mt-2 pt-2 font-bold text-md'>Total Cost: ${(cart?.length * 10)+(cart?.length * 2)+(cart?.length * 0.5)}</p>
+
+                <button onClick={handleOrder} className='my-10 bg-orange-300 px-4 py-2 rounded-lg'>Complete the order</button>
+
+              </section>}
             </section>
           </section>
         </div>

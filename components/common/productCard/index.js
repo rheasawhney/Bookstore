@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
@@ -9,6 +10,7 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
 
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
   const [order, setOrder] = useCookies(['order']);
+  const router = useRouter()
 
   function handleCart(){
     if(cookies.isLoggedIn!=="true"){
@@ -27,6 +29,7 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
       }
       setCookie('cart',cartData);
       toast.success("Book added to cart succesfully")
+      router.push("/cart")
     }
   }
 
@@ -46,6 +49,7 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
       }
       setOrder('order',orderData);
       toast.success("Book added to order succesfully")
+      router.push("/orders")
     }
   }
 

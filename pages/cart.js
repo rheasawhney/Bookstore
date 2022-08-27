@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
@@ -10,6 +11,7 @@ const Cart = () => {
 
   const [cookies, setCookie] = useCookies(['cart']);
   const [cart,setCart] = useState()
+  const router = useRouter()
 
   useEffect(()=>{
     fetchBooks()
@@ -19,7 +21,7 @@ const Cart = () => {
     const data = await axios.get("/api/book/getBooks")
   
     if(data?.data?.length>0){
-      let list = data?.data.filter(x => cookies?.cart?.books.includes(x._id))
+      let list = data?.data.filter(x => cookies?.cart?.books?.includes(x._id))
       setCart(list)
     }  
   }
@@ -39,18 +41,20 @@ const Cart = () => {
         "books":books
       }
       setCookie('order',orderData);
+      handleRemove(id)
       toast.success("Book added to order succesfully")
+      router.push("/orders")
     }
   }
 
   function handleRemove(id){
-    console.log(id)
     let x = cart?.filter(x=> x._id !== id)
     let cartData = {
       "userId":cookies?.userEmail,
       "books": x
     }
       setCookie('cart',cartData);
+      setCart(cartData.books)
       toast.success("Book removed to cart succesfully")
   }
   
