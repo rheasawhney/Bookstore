@@ -71,8 +71,7 @@ const Categories = () => {
               )
             })}
           </div>
-            </section>
-
+          </section>
         </div>
         <Footer/>
     </div>

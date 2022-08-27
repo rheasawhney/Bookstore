@@ -17,9 +17,9 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
     else{
       let books;
       if(cookies?.cart && cookies?.cart?.books){
-        books = [...cookies?.cart.books,parseInt(id)]
+        books = [...cookies?.cart.books,id]
       }else{
-        books = [parseInt(id)]
+        books = [id]
       }
       const cartData = {
         "userId":cookies.userEmail,
@@ -36,9 +36,9 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
     }else{
       let books;
       if(cookies?.order && cookies?.order?.books){
-        books = [...cookies?.order.books,parseInt(id)]
+        books = [...cookies?.order.books,id]
       }else{
-        books = [parseInt(id)]
+        books = [id]
       }
       const orderData = {
         "userId":cookies.userEmail,

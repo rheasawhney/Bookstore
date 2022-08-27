@@ -44,6 +44,7 @@ export default function Navbar() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
+  const [order, setOrder] = useCookies(['cat']);
 
   const router = useRouter();
 
@@ -111,7 +112,7 @@ export default function Navbar() {
                         <Link href={"/cart"}>
                             <p className='flex'>
                                 <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                                <p className='text-red-500 pl-2'>0</p>
+                                <p className='text-red-500 pl-2'>{order?.cart?.books?.length}</p>
                             </p>
                         </Link>
                      
