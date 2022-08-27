@@ -5,40 +5,50 @@ import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
 import styles from "../productCard/style.module.css"
 
-export const ProductCard = ({imageUrl,name,price}) => {
+export const ProductCard = ({id,imageUrl,name,price}) => {
 
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
-  const [data, setEmail] = useCookies(['userEmail']);
-  const [cart,setCart] = useState([]);
-
-  useEffect(()=>{
-    if(data.userEmail){
-      getCart()
-    }
-
-  },[])
-
-  const getCart = async () => {
-    const res = await axios.get(`/api/cart/getCartById?userId=${data.userEmail}`)
-    if(res.status === 200){
-      setCart(res.data)
-    }
-  }
+  const [order, setOrder] = useCookies(['order']);
 
   function handleCart(){
     if(cookies.isLoggedIn!=="true"){
       toast.error("Please login to add to cart")
     }
     else{
-      // const resp = axios.post()
+      let books;
+      if(cookies?.cart && cookies?.cart?.books){
+        books = [...cookies?.cart.books,parseInt(id)]
+      }else{
+        books = [parseInt(id)]
+      }
+      const cartData = {
+        "userId":cookies.userEmail,
+        "books":books
+      }
+      setCookie('cart',cartData);
+      toast.success("Book added to cart succesfully")
     }
   }
 
   function handleBuy(){
     if(cookies.isLoggedIn!=="true"){
       toast.error("Please login to Buy the item")
+    }else{
+      let books;
+      if(cookies?.order && cookies?.order?.books){
+        books = [...cookies?.order.books,parseInt(id)]
+      }else{
+        books = [parseInt(id)]
+      }
+      const orderData = {
+        "userId":cookies.userEmail,
+        "books":books
+      }
+      setOrder('order',orderData);
+      toast.success("Book added to order succesfully")
     }
   }
+
   return (
     <div className="w-[15vw] p-4 pb-12 my-10 border shadow-2xl rounded-xl">
         <section>

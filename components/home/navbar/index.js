@@ -1,12 +1,11 @@
 
 import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
 import { Logo } from '../../atoms/logo'
 import Link from 'next/link'
 import { useCookies } from 'react-cookie'
-import { faCropSimple } from '@fortawesome/free-solid-svg-icons'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -45,7 +44,6 @@ export default function Navbar() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
-
 
   const router = useRouter();
 
@@ -111,7 +109,10 @@ export default function Navbar() {
                         >
                         <span className="sr-only">View notifications</span>
                         <Link href={"/cart"}>
-                            <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                            <p className='flex'>
+                                <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                                <p className='text-red-500 pl-2'>0</p>
+                            </p>
                         </Link>
                      
                         </button>
@@ -191,7 +192,7 @@ export default function Navbar() {
                         
                 {navList.map(nav=> {
                             return(
-                                <Disclosure.Button
+                            <Disclosure.Button
                                 key={nav.route}
                                 as="a"
                                 href={nav.route}
@@ -222,6 +223,7 @@ export default function Navbar() {
                     <span className="sr-only">View notifications</span>
                     <Link href="/cart" passHref>
                     <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                   
                     </Link>
                
                     </button>
