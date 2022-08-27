@@ -30,7 +30,7 @@ export const ProductCard = ({imageUrl,name,price}) => {
       toast.error("Please login to add to cart")
     }
     else{
-      const resp = axios.post()
+      // const resp = axios.post()
     }
   }
 

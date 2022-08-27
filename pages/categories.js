@@ -3,13 +3,14 @@ import Footer from '../components/common/footer'
 import { ProductCard } from '../components/common/productCard'
 import Navbar from '../components/home/navbar'
 import axios from 'axios'
-import { SearchCircleIcon, SearchIcon } from '@heroicons/react/outline'
+import { SearchIcon } from '@heroicons/react/outline'
 import { debounce } from 'lodash'
 import _ from 'lodash'
 
 const Categories = () => {
     const [books, setBooks] = useState([])
     const [filteredBooks, setFilteredBook] = useState(books)
+    const loadSearch = debounce(handleSearch,800)
 
     useEffect(()=>{
       fetchBooks()
@@ -26,8 +27,6 @@ const Categories = () => {
       setFilteredBook(items)
     }
 
-    const loadSearch = debounce(handleSearch,800)
-
     function handleSort(e){
       var result 
       if(e.target.value.includes("nameAsc")){
@@ -37,7 +36,6 @@ const Categories = () => {
       }
       setFilteredBook(result)
     }
-
 
     return (
     <div>
