@@ -24,7 +24,6 @@ export const Orders = () => {
   
     if(data?.data?.length>0){
       let list = data?.data.filter(x => cookies?.order?.books?.includes(x._id))
-      console.log(list)
       setCart(list)
     }  
   }
