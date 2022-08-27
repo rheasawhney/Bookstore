@@ -31,12 +31,10 @@ const Profile = () => {
     const [cookies, getCookie] = useCookies(['userEmail']);
     const [profileEmail,setProfile] = useState({});
     useEffect(()=>{
-      console.log(cookies.userEmail)
       setProfile(cookies.userEmail)
     },[])
 
     const profile = profiles[profileEmail]
-    console.log(profile)
     return (
       <div >
       <Navbar/>

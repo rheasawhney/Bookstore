@@ -29,7 +29,6 @@ const Categories = () => {
     const loadSearch = debounce(handleSearch,800)
 
     function handleSort(e){
-      console.log(e.target.value)
       var result 
       if(e.target.value.includes("nameAsc")){
        result = _.orderBy(filteredBooks,['title'],['asc']);
@@ -37,7 +36,6 @@ const Categories = () => {
         result = _.orderBy(filteredBooks,['title'],['desc']);
       }
       setFilteredBook(result)
-      console.log(result)
     }
 
 

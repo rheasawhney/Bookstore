@@ -55,7 +55,6 @@ export default function Navbar() {
     }else{
         setLoggedIn(false)
     }
-    console.log(isLoggedIn)
   },[cookies])
 
   return (

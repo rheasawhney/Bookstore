@@ -1,5 +1,6 @@
+import axios from 'axios'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
 import styles from "../productCard/style.module.css"
@@ -7,10 +8,29 @@ import styles from "../productCard/style.module.css"
 export const ProductCard = ({imageUrl,name,price}) => {
 
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
+  const [data, setEmail] = useCookies(['userEmail']);
+  const [cart,setCart] = useState([]);
+
+  useEffect(()=>{
+    if(data.userEmail){
+      getCart()
+    }
+
+  },[])
+
+  const getCart = async () => {
+    const res = await axios.get(`/api/cart/getCartById?userId=${data.userEmail}`)
+    if(res.status === 200){
+      setCart(res.data)
+    }
+  }
 
   function handleCart(){
     if(cookies.isLoggedIn!=="true"){
       toast.error("Please login to add to cart")
+    }
+    else{
+      const resp = axios.post()
     }
   }
 

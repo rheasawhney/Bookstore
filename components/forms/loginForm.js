@@ -25,7 +25,6 @@ export const LoginForm = () => {
 
   const registerUser = async () => {
       const res = await axios.post(insertUser,{email:email,password:password})
-      console.log(res)
       if(res.data){
         toast.success("User Created Successfully");
       }
