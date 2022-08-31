@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 export const LoginForm = () => {
 
-  const insertUser = "http://localhost:3000/api/user/insertUser";
+  const insertUser = "/api/user/insertUser";
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
 
   const [email,setEmail] = useState('');
@@ -40,7 +40,7 @@ export const LoginForm = () => {
   }
 
   const checkUserExist = async (email,password) => {
-    const res = await axios.post("http://localhost:3000/api/user/getUserByPhone",{email:email})
+    const res = await axios.post("/api/user/getUserByPhone",{email:email})
     if(res.data && res.data._id){
       if(password === res.data.password){
         toast.success("Login Successfully");

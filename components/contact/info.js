@@ -24,7 +24,7 @@ export const ContactInfo = () => {
   }
 
   const insertQuery = async  (queryData) => {
-    const res = await axios.post("http://localhost:3000/api/queries/insertQuery",queryData)
+    const res = await axios.post("/api/queries/insertQuery",queryData)
     if(res.status===200){
       toast.success("Your query is submitted succesfully")
     }
