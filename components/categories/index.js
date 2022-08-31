@@ -1,55 +1,7 @@
 import React from 'react'
 import styles from "../categories/Category.module.css"
 import Image from "next/image"
-import castleImage from "../../public/castleimg.webp"
-import bio from "../../public/bio.jpeg"
-import fiction from "../../public/download.jpeg"
-import mystery from "../../public/mystery.jpeg"
-import nonFiction from "../../public/nonFiction.jpeg"
-import fantasy from "../../public/fantasy.jpeg"
-import { ChevronRightIcon } from '@heroicons/react/outline'
-import { authors } from '../../utils/author'
 
-
-// const catergoryData = [
-//   {
-//     id:1,
-//     name:"Fiction",
-//     description:"fiction is based on made up scenarios",
-//     image:fiction,
-//     bgColor:"#f0e6ff  "
-//   },
-//   {
-//     id:2,
-//     name:"Non-Fiction",
-//     description:"Non fiction is based on not made up scenarios",
-//     image: nonFiction,
-//     bgColor:"#f0e6ff "
-//   },
-//   {
-//     id:3,
-//     name:"Fantasy",
-//     description:"Fantasy deals with the imagination and fantasy",
-//     image:fantasy,
-//     bgColor:"#f0e6ff "
-//   },
-//   {
-//     id:4,
-//     name:"Mystery",
-//     description:"Mystery deals with the mysterios stories",
-//     image:mystery,
-//     bgColor:"#f0e6ff "
-//   },
-//   {
-//     id:5,
-//     name:"Biography",
-//     description:"Biography deals with the biography of an individual",
-//     image:bio,
-//     bgColor:"#f0e6ff "
-//   }
-  
-  
-// ]
 
 export const Category = ({books}) => {
 
