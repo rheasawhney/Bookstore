@@ -39,7 +39,7 @@ const Profile = () => {
       <div >
       <Navbar/>
       <div className='w-100 h-auto p-[5vh] text-center bg-white'>
-            <div className='w-[60%] rounded-lg m-auto h-[50vh] p-[3vh] text-center bg-white shadow-2xl flex justify-center py-20'><br/>
+            <div className='w-[60%] rounded-lg m-auto h-auto p-[3vh] text-center bg-white shadow-2xl flex justify-center py-20'><br/>
               <section className="mr-12">
                 <img className="w-[10vw] h-[10vw] rounded-full" src={profile?.image}/>
               </section>
