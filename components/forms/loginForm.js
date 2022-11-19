@@ -27,6 +27,8 @@ export const LoginForm = () => {
       const res = await axios.post(insertUser,{email:email,password:password})
       if(res.data){
         toast.success("User Created Successfully");
+        setCookie('userEmail',email);
+        router.push("/onboard")
       }
   }
 

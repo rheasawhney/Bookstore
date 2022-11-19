@@ -32,7 +32,7 @@ const Cart = () => {
     }else{
       let books;
       if(cookies?.order && cookies?.order?.books){
-        books = [...cookies?.order.books,id]
+        books = [...cookies?.order.books,id,qty]
       }else{
         books = [id]
       }

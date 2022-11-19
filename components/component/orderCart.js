@@ -12,6 +12,7 @@ export const OrderCart = ({imageUrl,name,price,description,id,handleRemove}) => 
             <p>{description}</p>
             <p>{price}</p>
             <p>⭐⭐⭐⭐⭐</p>
+            <p className='mt-2 font-bold'>Qty : 1</p>
         </section>
         <section className=''>
             <button onClick={()=>{handleRemove(id)}} className='bg-red-200 px-4 py-2 rounded-md'>Cancel</button>    

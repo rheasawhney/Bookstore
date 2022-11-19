@@ -8,9 +8,11 @@ const user = new Schema({
   password: { type: String, required: true },
   photoUrl: { type: String },
   cart: [{type: String}],
-  order: [{type: String}],
-  cancelled:[{type: String}],
-  fulfilled:[{type: String}],
+  firstName:{ type: String },
+  lastName: { type: String },
+  gender: { type: String },
+  statE: {type: String},
+  zipcode: {type: String}
 });
 
 mongoose.models = {};
