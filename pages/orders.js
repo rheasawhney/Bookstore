@@ -40,64 +40,64 @@ export const Orders = () => {
     toast.success("Book removed to cart succesfully")
   }
 
-  const handlePayment = (subscriptionAmt, subscriptionType) => {
+  // const handlePayment = (subscriptionAmt, subscriptionType) => {
     
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.onerror = () => {
-      alert("Razorpay SDK failed to load. Are you online?");
-    };
-    script.onload = async () => {;
-      try {
+  //   const script = document.createElement("script");
+  //   script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  //   script.onerror = () => {
+  //     alert("Razorpay SDK failed to load. Are you online?");
+  //   };
+  //   script.onload = async () => {;
+  //     try {
       
   
-        const result = await axios.post(
-          "/api/razorpay/createSubscriptionOrder",
-          {
-            amount: (subscriptionAmt*100),
-          }
-        );
-        const { amount, id: order_id, currency } = result.data;
-        const  razorpayKey =  process.env.RAZORPAY_KEY_ID
+  //       const result = await axios.post(
+  //         "/api/razorpay/createSubscriptionOrder",
+  //         {
+  //           amount: (subscriptionAmt*100),
+  //         }
+  //       );
+  //       const { amount, id: order_id, currency } = result.data;
+  //       const  razorpayKey =  process.env.RAZORPAY_KEY_ID
 
-        const options = {
-          key: razorpayKey,
-          amount: amount.toString(),
-          currency: currency,
-          name: "Omerald",
-          description: subscriptionType,
-          order_id: order_id,
-          handler: async function (response) {
-            const result = await axios.post(
-              "/api/razorpay/paySubscriptionOrder",
-              {
-                amount: amount,
-                razorpayPaymentId: response.razorpay_payment_id,
-                razorpayOrderId: response.razorpay_order_id,
-                razorpaySignature: response.razorpay_signature,
-                subscriptionType: subscriptionType,
-                userId: profileData.phoneNumber,
-              }
-            );
-            if(result.status===201){
-              toast.success("Your payment is succesfull")
-            }
-          },
-          prefill: {
-            name: profileData?.firstName+" "+profileData?.lastName,
-            email: profileData?.email,
-            contact: profileData?.phoneNumber,
-          },
-        };
+  //       const options = {
+  //         key: razorpayKey,
+  //         amount: amount.toString(),
+  //         currency: currency,
+  //         name: "Omerald",
+  //         description: subscriptionType,
+  //         order_id: order_id,
+  //         handler: async function (response) {
+  //           const result = await axios.post(
+  //             "/api/razorpay/paySubscriptionOrder",
+  //             {
+  //               amount: amount,
+  //               razorpayPaymentId: response.razorpay_payment_id,
+  //               razorpayOrderId: response.razorpay_order_id,
+  //               razorpaySignature: response.razorpay_signature,
+  //               subscriptionType: subscriptionType,
+  //               userId: profileData.phoneNumber,
+  //             }
+  //           );
+  //           if(result.status===201){
+  //             toast.success("Your payment is succesfull")
+  //           }
+  //         },
+  //         prefill: {
+  //           name: profileData?.firstName+" "+profileData?.lastName,
+  //           email: profileData?.email,
+  //           contact: profileData?.phoneNumber,
+  //         },
+  //       };
       
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
-      } catch (err) {
-        toast.error(err);
-      }
-    };
-    document.body.appendChild(script);
-  };
+  //       const paymentObject = new window.Razorpay(options);
+  //       paymentObject.open();
+  //     } catch (err) {
+  //       toast.error(err);
+  //     }
+  //   };
+  //   document.body.appendChild(script);
+  // };
 
   function handleOrder(){
     toast.success("Your order is placed succesfully")
@@ -130,7 +130,7 @@ export const Orders = () => {
                 <hr/>
                 <p className='border-t-4 border-orange-700 mt-2 pt-2 font-bold text-md'>Total Cost: ${(cart?.length * 10)+(cart?.length * 2)+(cart?.length * 0.5)}</p>
 
-                <button onClick={()=>{handlePayment(100,"dummy")}} className='my-10 bg-orange-300 px-4 py-2 rounded-lg'>Complete the order</button>
+                <button onClick={handleOrder} className='my-10 bg-orange-300 px-4 py-2 rounded-lg'>Complete the order</button>
                 
               </section>}
             </section>

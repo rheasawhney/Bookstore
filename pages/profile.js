@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import Footer from '../components/common/footer'
@@ -29,7 +30,7 @@ const profiles = {
 const Profile = () => {
 
     const [cookies, getCookie] = useCookies(['userEmail']);
-
+    const route = useRouter()
     const [profile,setProfileValue] = useState({})
    
     useEffect(()=>{
@@ -38,11 +39,14 @@ const Profile = () => {
       }
     },[cookies.userEmail])
 
-
+    const handleAdd= () =>{
+      route.push("/addBooks")
+    }
     return (
       <div >
       <Navbar/>
       <div className='w-100 h-auto p-[5vh] text-center bg-white'>
+       
             <div className='w-[60%] rounded-lg m-auto h-auto p-[3vh] text-center bg-white shadow-2xl flex justify-center py-20'><br/>
               <section className="mr-12">
                 <img className="w-[10vw] h-[10vw] rounded-full" src={profile?.image}/>
@@ -54,8 +58,10 @@ const Profile = () => {
               <p className='my-2'><b>Contact</b>: {profile?.contact}</p>
               <p className='my-2'><b>Email</b>: {profile?.email}</p>
               <p className='my-2'><b>Address</b>: {profile?.address}</p>
+              <button className='font-light text-sm bg-gray-400 p-1  text-white rounded-sm' onClick={handleAdd}>Add Books</button>
             </section> 
            </div>
+          
         </div>
       <Footer/>
       </div>

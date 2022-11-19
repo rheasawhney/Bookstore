@@ -20,6 +20,7 @@ const Categories = () => {
       const data = await axios.get("/api/book/getBooks")
       setFilteredBook(data.data)
       setBooks(data.data)
+      console.log(filteredBooks)
     }
 
     function handleSearch(e){
@@ -65,7 +66,7 @@ const Categories = () => {
               </section>
             </section>
           <div className={"w-[100%] sm:w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-2 xl:grid-cols-5 m-auto my-10"}>
-            {filteredBooks.slice(0,10).map((cards,index) => {
+            {filteredBooks.slice(0,30).map((cards,index) => {
               return(
                 <ProductCard key={index} id={cards._id} name={cards.title} price={cards?.price ? cards.price :"$10"} imageUrl={cards.thumbnailUrl}/>
               )
