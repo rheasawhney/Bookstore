@@ -103,7 +103,6 @@ export const Orders = () => {
     toast.success("Your order is placed succesfully")
     setCookie("cart",{})
     setCookie("order",{})
-    handlePayment()
     router.push("/orderCompletion")
   }
 

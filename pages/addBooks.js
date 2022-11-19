@@ -33,7 +33,7 @@ const AddBooks = () => {
         const res = await axios.post("/api/book/insertBook",register)
         console.log(res)
         if(res.status===200){
-            toast.success("User Created Succesfully")
+            toast.success("Book Created Succesfully")
             router.push("/categories")
         }
     }
