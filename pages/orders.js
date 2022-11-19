@@ -14,7 +14,7 @@ export const Orders = () => {
   const [cookies, setCookie] = useCookies(['order']);
   const [cart,setCart] = useState()
   const router = useRouter()
-  console.log(cookies)
+  
 
   useEffect(()=>{
     fetchBooks()
