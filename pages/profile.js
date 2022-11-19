@@ -29,12 +29,16 @@ const profiles = {
 const Profile = () => {
 
     const [cookies, getCookie] = useCookies(['userEmail']);
-    const [profileEmail,setProfile] = useState({});
-    useEffect(()=>{
-      setProfile(cookies.userEmail)
-    },[])
 
-    const profile = profiles[profileEmail]
+    const [profile,setProfileValue] = useState({})
+   
+    useEffect(()=>{
+      if(cookies.userEmail){
+        setProfileValue(profiles[cookies.userEmail])
+      }
+    },[cookies.userEmail])
+
+
     return (
       <div >
       <Navbar/>
