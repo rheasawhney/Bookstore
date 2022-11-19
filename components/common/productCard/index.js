@@ -6,17 +6,20 @@ import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
 import styles from "../productCard/style.module.css"
 
-export const ProductCard = ({id,imageUrl,name,price}) => {
+export const 
+ProductCard = ({id,imageUrl,name,price}) => {
 
   const [cookies, setCookie] = useCookies(['isLoggedIn']);
   const [order, setOrder] = useCookies(['order']);
   const router = useRouter()
 
   function handleCart(){
+ 
     if(cookies.isLoggedIn!=="true"){
       toast.error("Please login to add to cart")
     }
     else{
+      console.log("carting")
       let books;
       if(cookies?.cart && cookies?.cart?.books){
         books = [...cookies?.cart.books,id]
@@ -27,6 +30,7 @@ export const ProductCard = ({id,imageUrl,name,price}) => {
         "userId":cookies.userEmail,
         "books":books
       }
+      console.log(cartData)
       setCookie('cart',cartData);
       toast.success("Book added to cart succesfully")
       router.push("/cart")

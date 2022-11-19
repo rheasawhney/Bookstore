@@ -16,7 +16,7 @@ export const FeaturedContainer = ({books}) => {
           <div className={"w-[100%] sm:w-[100%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-2 xl:grid-cols-5 m-auto my-10"}>
             {books.slice(0,10).map((cards,index) => {
               return(
-                <ProductCard key={index} name={cards.title} price={cards?.price ? cards.price :"$10"} imageUrl={cards.thumbnailUrl}/>
+                <ProductCard key={index} id={cards._id} name={cards.title} price={cards?.price ? cards.price :"$10"} imageUrl={cards.thumbnailUrl}/>
               )
             })}
           </div>
