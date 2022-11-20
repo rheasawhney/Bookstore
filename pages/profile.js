@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
@@ -35,9 +36,19 @@ const Profile = () => {
    
     useEffect(()=>{
       if(cookies.userEmail){
-        setProfileValue(profiles[cookies.userEmail])
+        getUser(cookies.userEmail)
+      
+        
       }
     },[cookies.userEmail])
+
+
+    const getUser = async (email) => {
+      const res = await axios.post("/api/user/getUserByPhone",{"email":email})
+      console.log(res?.data)
+      if(res?.data){setProfileValue(res?.data)}
+ 
+    }
 
     const handleAdd= () =>{
       route.push("/addBooks")
@@ -49,15 +60,15 @@ const Profile = () => {
        
             <div className='w-[60%] rounded-lg m-auto h-auto p-[3vh] text-center bg-white shadow-2xl flex justify-center py-20'><br/>
               <section className="mr-12">
-                <img className="w-[10vw] h-[10vw] rounded-full" src={profile?.image}/>
+                <img className="w-[10vw] h-[10vw] rounded-full" src={profiles["saifmohammed888@gmail.com"]?.image} alt="profile"/>
               </section>
-              <section className="text-left"><h1 className="font-bold text-4xl">{profile?.name}</h1><br/>
-              <p className="my-2">{profile?.profession}</p>
-              <p>Lives in {profile?.city} India</p>
+              <section className="text-left"><h1 className="font-bold text-4xl">{profile?.firstName+" "+profile?.lastName}</h1><br/>
+              <p className="my-2">{profile?.gender}</p>
+              <p>Lives in {profile?.state} India</p>
               <p className="my-2 max-w-[40vw]">{profile?.bio}</p>
               <p className='my-2'><b>Contact</b>: {profile?.contact}</p>
               <p className='my-2'><b>Email</b>: {profile?.email}</p>
-              <p className='my-2'><b>Address</b>: {profile?.address}</p>
+              <p className='my-2'><b>Address</b>: {profile?.pincode}+{" "+profile?.state}</p>
               <button className='font-light text-sm bg-gray-400 p-1  text-white rounded-sm' onClick={handleAdd}>Add Books</button>
             </section> 
            </div>

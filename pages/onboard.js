@@ -145,13 +145,13 @@ const Onboard = () => {
                         </div>
 
                         <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                        <label htmlFor="region" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="state" className="block text-sm font-medium text-gray-700">
                             State / Province
                         </label>
                         <input
                             type="text"
-                            name="region"
-                            id="region"
+                            name="state"
+                            id="state"
                             onChange={(e)=>{
                                 register.state = e.target.value
                                 setRegister(register)
